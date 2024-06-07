@@ -3,9 +3,6 @@ from opensky_api import OpenSkyApi
 
 from Meta import Formatting
 
-_24_hrs_in_secs = 24 * 60 * 60
-_2_hrs_in_secs = 2 * 60 * 60
-
 api = OpenSkyApi()
 states = api.get_states()
 s = states.states[rand.randint(0, len(states.states))]
