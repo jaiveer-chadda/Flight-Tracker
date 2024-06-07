@@ -5,10 +5,13 @@ from Meta import Formatting
 
 api = OpenSkyApi()
 states = api.get_states()
+
 if states is None:
     raise Exception("No states found")
+
 s = states.states[rand.randint(0, len(states.states))]
 track = api.get_track_by_aircraft(s.icao24)
+
 path_is_valid = track is not None
 
 print(f"""
