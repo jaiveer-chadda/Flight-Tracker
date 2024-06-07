@@ -21,23 +21,14 @@ def coordinates(latitude: float, longitude: float) -> str:
 
 def heading(heading_: float) -> str:
     match heading_:
-        case h if h >= 337.5 or h < 22.5:
-            direction = "N"
-        case h if 22.5 <= h < 67.5:
-            direction = "NE"
-        case h if 67.5 <= h < 112.5:
-            direction = "E"
-        case h if 112.5 <= h < 157.5:
-            direction = "SE"
-        case h if 157.5 <= h < 202.5:
-            direction = "S"
-        case h if 202.5 <= h < 247.5:
-            direction = "SW"
-        case h if 247.5 <= h < 292.5:
-            direction = "W"
-        case h if 292.5 <= h < 337.5:
-            direction = "NW"
-        case _:
-            direction = ""
+        case h if h >= 337.5 or h < 22.5: direction = "N"
+        case h if 22.5  <= h <  67.5: direction = "NE"
+        case h if 67.5  <= h < 112.5: direction = "E"
+        case h if 112.5 <= h < 157.5: direction = "SE"
+        case h if 157.5 <= h < 202.5: direction = "S"
+        case h if 202.5 <= h < 247.5: direction = "SW"
+        case h if 247.5 <= h < 292.5: direction = "W"
+        case h if 292.5 <= h < 337.5: direction = "NW"
+        case _: direction = ""
     
     return f"{heading_}º {direction}"
