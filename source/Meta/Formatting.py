@@ -1,22 +1,22 @@
 def coordinates(latitude: float, longitude: float) -> str:
-    def convert_to_dms(decimal_degree):
+    def convert_to_dms(decimal_degree, is_lat):
         is_positive = decimal_degree >= 0
         decimal_degree = abs(decimal_degree)
         degrees = int(decimal_degree)
         minutes_full = (decimal_degree - degrees) * 60
         minutes = int(minutes_full)
         seconds = (minutes_full - minutes) * 60
-        if is_positive:
-            direction = 'N' if degrees in range(0, 90) else 'E'
+        if is_lat:
+            direction = 'N' if is_positive else 'S'
         else:
-            direction = 'S' if degrees in range(0, 90) else 'W'
+            direction = 'E' if is_positive else 'W'
             
         return (f"{degrees}°"
                 f"{str(minutes).rjust(2, "0")}'"
                 f"{str(f'{seconds:.2f}').rjust(5, '0')}\""
                 f"{direction}")
     
-    return convert_to_dms(latitude) + " " + convert_to_dms(longitude)
+    return convert_to_dms(latitude, True) + " " + convert_to_dms(longitude, False)
 
 
 def heading(heading_: float) -> str:
