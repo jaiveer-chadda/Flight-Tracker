@@ -16,7 +16,7 @@ path_is_valid = track is not None
 
 print(f"""
 \torigin:\t\t{s.origin_country}
-\tcall sign:\t{"unknown" if s.callsign in [None, ""] else s.callsign}
+\tcall sign:\t{"unknown" if s.callsign in (None, "") else s.callsign}
 
 \tcurrent pos:\t{Formatting.coordinates(s.latitude, s.longitude)}
 \tstart pos:\t{Formatting.coordinates(*track.path[0][1:3]) if path_is_valid else "unknown"}
