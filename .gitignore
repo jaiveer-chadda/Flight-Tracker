@@ -1,3 +1,5 @@
 .idea/
 /venv/
-source/src
+src
+.DS_Store
+resources/.DS_Store
