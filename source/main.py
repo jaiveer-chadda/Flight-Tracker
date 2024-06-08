@@ -1,5 +1,5 @@
 import random as rand
-from opensky_api import OpenSkyApi
+from opensky.python.opensky_api import OpenSkyApi
 
 from Meta import Formatting
 

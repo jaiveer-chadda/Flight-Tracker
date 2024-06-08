@@ -1,5 +1,5 @@
 .idea/
 /venv/
-opensky-api/
+source/opensky/
 .DS_Store
 resources/.DS_Store
