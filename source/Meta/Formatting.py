@@ -6,11 +6,8 @@ def coordinates(latitude: float, longitude: float) -> str:
         minutes_full = (decimal_degree - degrees) * 60
         minutes = int(minutes_full)
         seconds = (minutes_full - minutes) * 60
-        if is_lat:
-            direction = 'N' if is_positive else 'S'
-        else:
-            direction = 'E' if is_positive else 'W'
-            
+        direction = ('N' if is_positive else 'S') if is_lat else ('E' if is_positive else 'W')
+
         return (f"{degrees}°"
                 f"{str(minutes).rjust(2, "0")}'"
                 f"{str(f'{seconds:.2f}').rjust(5, '0')}\""
@@ -30,5 +27,5 @@ def heading(heading_: float) -> str:
         case h if 247.5 <= h < 292.5: direction = "W"
         case h if 292.5 <= h < 337.5: direction = "NW"
         case _: direction = ""
-    
+
     return f"{heading_}º {direction}"
