@@ -22,7 +22,7 @@ print(f"""
 \tstart pos:\t{Formatting.coordinates(*track.path[0][1:3]) if path_is_valid else "unknown"}
 \tend pos:\t{Formatting.coordinates(*track.path[-1][1:3]) if path_is_valid else "unknown"}
 
-\talt:\t\t{s.baro_altitude} m
-\tvel:\t\t{s.velocity} m/s
+\talt:\t\t{"unknown" if s.baro_altitude in (None, "") else s.baro_altitude} m
+\tvel:\t\t{"unknown" if s.velocity in (None, "") else s.velocity} m/s
 \theading:\t{Formatting.heading(s.true_track)}
 """)
