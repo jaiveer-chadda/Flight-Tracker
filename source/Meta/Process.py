@@ -12,7 +12,7 @@ def _get_coordinate_list() -> list[tuple[str, tuple[float, float]]]:
     with open(c.AIRPORTS_DB_FP, 'r') as database_txt:
         airport_list: list[str] = database_txt.read().split("\n")
         
-    # EGLL,Heathrow,London,England,51.477,-0.461
+    # EGLL,Heathrow Airport,London,England,51.477,-0.461
     # Airport Code;Airport Name;City Name;Country Name;Country Code;Latitude;Longitude;World Area Code;City Name geo_name_id;Country Name geo_name_id;coordinates
         
     final_coord_list: list[tuple[str, tuple[float, float]]] = []
@@ -21,7 +21,8 @@ def _get_coordinate_list() -> list[tuple[str, tuple[float, float]]]:
         try:
             # print(airport_string)
             content: list[str] = airport_string.split(":")
-            name: str = f"{content[1]} Airport - {content[2]}, {content[3]}"
+            add_airport: bool = content[1].split(" ")[-1].strip() != "Airport"
+            name: str = f"{content[1]} {"Airport " if add_airport else ""}- {content[2]}, {content[3]}"
             coords: tuple[str, tuple[float, float]] = name, (float(content[5]), float(content[6]))
             # Heathrow, 51.477, -0.461
             final_coord_list.append(coords)
