@@ -25,7 +25,7 @@ def _get_coordinate_list() -> list[tuple[str, tuple[float, float]]]:
             coords: tuple[str, tuple[float, float]] = name, (float(content[5]), float(content[6]))
             # Heathrow, 51.477, -0.461
             final_coord_list.append(coords)
-        except ValueError | IndexError as e:
+        except (ValueError, IndexError) as e:
             print(airport_string)
             raise Exception
         
