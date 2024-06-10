@@ -1,5 +1,0 @@
-setup.py
-Meta.egg-info/PKG-INFO
-Meta.egg-info/SOURCES.txt
-Meta.egg-info/dependency_links.txt
-Meta.egg-info/top_level.txt
