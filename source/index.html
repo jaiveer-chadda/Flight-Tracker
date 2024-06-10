@@ -3,9 +3,12 @@
     <head>
         <title>Interactive World Map</title>
 
-        <meta charset="utf-8" />
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+        <script type="text/javascript" src="modules.js"></script>
+        <script src="map.js" defer></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
         <style>
             body {
@@ -20,8 +23,9 @@
     </head>
 
     <body>
-        <div id="map"></div>
+<!--        <div id="map"></div>-->
+        <button onclick="runPythonCode()">Run Python Code</button>
+        <div id="output"></div>
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <script src="map.js"></script>
     </body>
 </html>
